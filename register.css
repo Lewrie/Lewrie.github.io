@@ -1,6 +1,6 @@
         body {
             --bg-color: var(--tg-theme-bg-color, #fff);
-            font-family: sans-serif;
+            font-family: "Exo 2", sans-serif;
             background-color: var(--bg-color);
             color: var(--tg-theme-text-color, #222);
             font-size: 14px;
