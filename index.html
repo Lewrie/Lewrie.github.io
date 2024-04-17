@@ -5,13 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link rel="stylesheet" href="register.css">
 <script>
-  var MainButton = WebApp.MainButton;
-
-MainButton.show();
-
-MainButton.onClick(function() {
-  WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
-});
+  var WebApp = window.Telegram.WebApp;
+function onRegister(){
+  WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+}
 </script>
 </head>
 <body>
@@ -41,7 +38,7 @@ MainButton.onClick(function() {
     <hr>
     <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
 
-    <button type="submit" class="registerbtn">Зарегистрироваться</button>
+    <button type="submit" class="registerbtn" onclick="onRegister()">Зарегистрироваться</button>
   </div>
 
   <!--<div class="container signin">
