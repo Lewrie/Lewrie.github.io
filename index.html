@@ -58,19 +58,19 @@
   </div>-->
 </form>
   <script type="text/javascript">
-const { Client } = pg;
-client = new Client({
-  host: '77.37.172.196',
-  user: 'postgres',
-  password: '35vpP6Erxdh%WJC',
-  database: 'postgres',
-});
-      
-client.connect;
-      
-function onReg(){
-    client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result);
-}
+    const { Client } = pg;
+    client = new Client({
+      host: '77.37.172.196',
+      user: 'postgres',
+      password: '35vpP6Erxdh%WJC',
+      database: 'postgres',
+    });
+          
+    client.connect;
+          
+    function onReg(){
+        client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result);
+    }
 </script>
 </body>
 </html>
