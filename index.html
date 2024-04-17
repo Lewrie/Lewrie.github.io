@@ -80,14 +80,20 @@
 
 client.connect()
 
-const query = {
-  text: 'INSERT INTO users(id, email) VALUES($1, $2)',
-  values: ['brianc', 'brian.m.carlson@gmail.com'],
+function onRegister(){
+    var id = WebApp.WebAppUser.id
+    var name = document.getElementById('name').value;
+    var birth_date = document.getElementById('birth_date').value.toString();
+    var mark = document.getElementById('mark').value;
+    var model = document.getElementById('model').value;
+    var year = document.getElementById('year').value;
+          
+    const query = {
+      text: 'INSERT INTO _USER(id, name, birth_date, mark, model, year) VALUES($1, $2, $3, $4, $5, $6)',
+      values: [id, name, birth_date, mark, model, year],
+    }
+    const res = await client.query(query)
 }
- 
-const res = await client.query(query)
-console.log(res.rows[0])
-
 </script>
 </body>
 </html>
