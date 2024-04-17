@@ -77,10 +77,9 @@
 
   })
 
-
-client.connect()
-
 function onRegister(){
+    client.connect()
+    
     var id = 0;
     var name = document.getElementById('name').value;
     var birth_date = document.getElementById('birth_date').value.toString();
