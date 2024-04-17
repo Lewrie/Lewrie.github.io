@@ -52,46 +52,24 @@
 
     <input type="button" value="Проверить" onclick="onRegister()">
   </div>
-
+s
   <!--<div class="container signin">
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>-->
 </form>
   <script type="text/javascript">
 
-  const {Pool, Client} = require('pg')
-
- 
-
-  const client = new Client({
-
-  user: "postgres",
-
-  host: "77.37.172.196",
-
-  database: "postgres",
-
-  password: "35vpP6Erxdh%WJC",
-
-  port: 25565
-
-  })
-
+  import pg from 'pg'
+const { Client } = pg
+client = new Client({
+  host: '77.37.172.196',
+  user: 'postgres',
+  password: '35vpP6Erxdh%WJC',
+  database: 'postgres',
+})
+client.connect
 function onRegister(){
-    client.connect()
-    
-    var id = 0;
-    var name = document.getElementById('name').value;
-    var birth_date = document.getElementById('birth_date').value.toString();
-    var mark = document.getElementById('mark').value;
-    var model = document.getElementById('model').value;
-    var year = document.getElementById('year').value;
-          
-    const query = {
-      text: 'INSERT INTO _USER(id, name, birth_date, mark, model, year) VALUES($1, $2, $3, $4, $5, $6)',
-      values: [id, name, birth_date, mark, model, year],
-    }
-    const res = client.query(query)
+    client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result)  
 }
 </script>
 </body>
