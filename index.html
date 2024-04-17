@@ -1,76 +1,65 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="MobileOptimized" content="176"/>
-    <meta name="HandheldFriendly" content="True"/>
-    <meta name="robots" content="noindex,nofollow"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="register.css">
-  <tittle></tittle>
-      <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
-    <script>
-        import pg from 'pg'
-        function setThemeClass() {
-            document.documentElement.className = Telegram.WebApp.colorScheme;
-        }
 
-        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
-        setThemeClass();
-    </script>
+<head>
+
+<title>Insert Record</title>
+
 </head>
+
 <body>
 
-<form action="/action_page.php">
-  <div class="container">
-    <h1>Регистрация</h1>
-    <hr>
+  <b>Add Record</b></font>
 
-    <label for="name"><b>Ваше имя</b></label>
-    <input type="text" placeholder="Введите имя" name="email" id="name" required>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">
 
-    <label for="birth_date"><b>Дата рождения</b></label>
-      <p></p>
-    <input type="date" placeholder="Enter Password" name="birth_date" id="birth_date" required>
-    <p></p>
-    <label for="mark"><b>Марка машины</b></label>
-    <input type="text" placeholder="Введите марку машины" name="mark" id="mark" required>
+  <form action="" method="POST" enablecab="Yes" border="">
 
-    <label for="model"><b>Модель машины</b></label>
-    <input type="text" placeholder="Введите модель машины" name="model" id="model" required>
+    Id:<input type="Text" name="id" align="LEFT" required="Yes" 
 
-    <label for="year"><b>Год выпуска машины</b></label>
-    <input type="text" placeholder="Введите год выпуска машины" name="year" id="year" required>
+    size="10" value=""><br><br>
 
-    <hr>
-    <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+   Name :<input type="Text" name="fname" align="LEFT" required="Yes" 
 
-    <input type="button" value="Проверить" onclick="onReg()">
-  </div>
-  <!--<div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>-->
-</form>
+    size="59" value=""><br><br>
+
+    <input type="button" id="add" name="add" value="Add" align="MIDDLE"><br><br>
+
+  </form>
+
+  
+
   <script type="text/javascript">
-    const { Client } = pg;
-    client = new Client({
-      host: '77.37.172.196',
-      user: 'postgres',
-      password: '35vpP6Erxdh%WJC',
-      database: 'postgres',
-    });
-          
-    client.connect;
-          
-    function onReg(){
-        client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result);
-    }
+
+  const {Pool, Client} = require('pg')
+
+ 
+
+  const client = new Client({
+
+  user: "postgres",
+
+  host: "77.37.172.196",
+
+  database: "postgres",
+
+  password: "35vpP6Erxdh%WJC",
+
+  port: 25565
+
+  })
+
+client.connect()
+
+var idd=$("#id").int();
+
+var nname=$("#fname").val()
+
+client.query("Insert into company (id,name,) VALUES ('"idd+"','"+fname+"',')",function(err, result)      
+
+//var sql = "INSERT INTO form (name, email,description) VALUES ('"+name+"', '"+email+"','"+username+"')";
+
 </script>
+
 </body>
+
 </html>
