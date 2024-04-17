@@ -51,25 +51,24 @@
     <hr>
     <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
 
-    <input type="button" value="Проверить" onclick="onRegister()">
+    <input type="button" value="Проверить" onclick="onReg()">
   </div>
-s
   <!--<div class="container signin">
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>-->
 </form>
   <script type="text/javascript">
-import pg from 'pg'
-      
-const { Client } = pg
+const { Client } = pg;
 client = new Client({
   host: '77.37.172.196',
   user: 'postgres',
   password: '35vpP6Erxdh%WJC',
   database: 'postgres',
 });
+      
 client.connect;
-function onRegister(){
+      
+function onReg(){
     client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result);
 }
 </script>
