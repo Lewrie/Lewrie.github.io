@@ -50,11 +50,7 @@
 
     <button type="submit" class="registerbtn">Зарегистрироваться</button>
   </div>
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
-    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
     <button onclick="DemoApp.expand();">Expand Webview</button>
-    <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
     <input type="text" placeholder="Input text in regular input..." id="regular_field"/>
     <div
             class="input"
@@ -149,7 +145,7 @@
     const DemoApp = {
         initData      : Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
-        MainButton    : Telegram.WebApp.MainButton,
+
 
         init(options) {
             document.body.style.visibility = '';
@@ -164,16 +160,6 @@
         },
         close() {
             Telegram.WebApp.close();
-        },
-        toggleMainButton(el) {
-            const mainButton = Telegram.WebApp.MainButton;
-            if (mainButton.isVisible) {
-                mainButton.hide();
-                el.innerHTML = 'Show Main Button';
-            } else {
-                mainButton.show();
-                el.innerHTML = 'Hide Main Button';
-            }
         },
 
         // actions
