@@ -16,6 +16,7 @@
   <tittle></tittle>
       <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script>
+        import pg from 'pg'
         function setThemeClass() {
             document.documentElement.className = Telegram.WebApp.colorScheme;
         }
@@ -58,18 +59,18 @@ s
   </div>-->
 </form>
   <script type="text/javascript">
-
-  import pg from 'pg'
+import pg from 'pg'
+      
 const { Client } = pg
 client = new Client({
   host: '77.37.172.196',
   user: 'postgres',
   password: '35vpP6Erxdh%WJC',
   database: 'postgres',
-})
-client.connect
+});
+client.connect;
 function onRegister(){
-    client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result)  
+    client.query("Insert into _USER (id,name,) VALUES (0, '0',)",function(err, result);
 }
 </script>
 </body>
